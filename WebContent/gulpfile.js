@@ -36,7 +36,7 @@ gulp.task('minify-css', ['sass'], function() {
       compatibility: 'ie8'
     }))
     .pipe(rename({
-      suffix: '.min'
+      suffix: ''
     }))
     .pipe(gulp.dest('css'))
     .pipe(browserSync.reload({
@@ -52,7 +52,7 @@ gulp.task('minify-js', function() {
       pkg: pkg
     }))
     .pipe(rename({
-      suffix: '.min'
+      suffix: ''
     }))
     .pipe(gulp.dest('js'))
     .pipe(browserSync.reload({
@@ -71,10 +71,10 @@ gulp.task('copy', function() {
     ])
     .pipe(gulp.dest('vendor/bootstrap'))
 
-  gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/jquery/dist/jquery.min.js'])
+  gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/jquery/dist/jquery.js'])
     .pipe(gulp.dest('vendor/jquery'))
 
-  gulp.src(['node_modules/popper.js/dist/umd/popper.js', 'node_modules/popper.js/dist/umd/popper.min.js'])
+  gulp.src(['node_modules/popper.js/dist/umd/popper.js', 'node_modules/popper.js/dist/umd/popper.js'])
     .pipe(gulp.dest('vendor/popper'))
 
   gulp.src(['node_modules/jquery.easing/*.js'])

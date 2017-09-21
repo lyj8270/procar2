@@ -5,10 +5,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <!-- Bootstrap core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
 <!-- Custom fonts for this template -->
-<link href="vendor/font-awesome/css/font-awesome.min.css"
+<link href="vendor/font-awesome/css/font-awesome.css"
 	rel="stylesheet" type="text/css">
 
 <!-- Custom styles for this template -->
