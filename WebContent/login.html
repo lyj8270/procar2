@@ -31,17 +31,16 @@
         	로그인
         </div>
         <div class="card-body">
-          <form action="/log" method="post">
+          <form action="log" method="post">
             <div class="form-group">
               <label for="exampleInputEmail1">ID</label>
-              <input type="text" class="form-control" id="id" aria-describedby="idHelp" placeholder="Enter ID">
+              <input type="text" class="form-control" name="id" aria-describedby="idHelp" placeholder="Enter ID">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">비밀번호</label>
-              <input type="password" class="form-control" id="Password" placeholder="Password">
+              <input type="password" class="form-control" name="Password" placeholder="Password">
             </div>
-
-            <button class="btn btn-primary btn-block">로그인</button>
+            <button type="submit" class="btn btn-primary btn-block">로그인</button>
           </form>
           <div class="text-center">
             <a class="d-block small mt-3" href="register.html">가입하기</a>

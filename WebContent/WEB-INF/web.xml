@@ -19,4 +19,14 @@
     <servlet-name>Test</servlet-name>
     <url-pattern>/Test</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginCheck</display-name>
+    <servlet-name>LoginCheck</servlet-name>
+    <servlet-class>controller.LoginCheck</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginCheck</servlet-name>
+    <url-pattern>/log</url-pattern>
+  </servlet-mapping>
 </web-app>
