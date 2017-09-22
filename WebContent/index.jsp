@@ -40,14 +40,13 @@
 	<!-- 본문 틀 -->
 	<div class="content-wrapper">
 		<!-- 본문 내용 -->
-		<div class="container-fluid" style="padding-top:10%;padding-left:5%;padding-right:5%;padding-bottom:10%">
-
-			<div class="w3-content w3-section" style="max-width: 90%">
-				<img class="mySlides w3-round-xlarge" src="img/american_made.jpg" style="width: 100%">
-				<img class="mySlides w3-round-xlarge" src="img/baby_driver.jpg" style="width: 100%">
-				<img class="mySlides w3-round-xlarge" src="img/taxi_driver.jpg" style="width: 100%">
-			</div>
-
+		<div class="container-fluid" style="padding-top:5%;padding-left:10%;padding-right:10%;padding-bottom:5%">
+ 			<div class="w3-content w3-section" style="width:70%">
+				<img class="mySlides w3-round-large" src="img/main_1.jpg" style="width:100%;">
+				<img class="mySlides w3-round-large" src="img/main_2.jpg" style="width:100%;">
+				<img class="mySlides w3-round-large" src="img/main_3.jpg" style="width:100%;">
+				<img class="mySlides w3-round-large" src="img/main_4.jpg" style="width:100%;">
+			</div> 
 		</div>
 		<!-- 본문 내용 끝 -->
 	</div>

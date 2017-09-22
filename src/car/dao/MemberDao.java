@@ -28,5 +28,29 @@ public class MemberDao {
 		}
 		return result;
 	}
+	
+	public static int insertMember(String id, String pw, String name, String email){
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		int result = 0;
+		sql = "insert into member values(?,?,?,?)";
+		
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pw);
+			pstmt.setString(3, name);
+			pstmt.setString(4, email);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBUtil.close(con, pstmt);
+		}
+		return result;
+	}
 }
 
