@@ -70,4 +70,14 @@
     <servlet-name>Register</servlet-name>
     <url-pattern>/register</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Bbs</display-name>
+    <servlet-name>Bbs</servlet-name>
+    <servlet-class>controller.BbsManager</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Bbs</servlet-name>
+    <url-pattern>/bbs</url-pattern>
+  </servlet-mapping>
 </web-app>
