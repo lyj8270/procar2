@@ -19,7 +19,12 @@
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
 	
-	<a class="navbar-brand" href="#"><i class="fa fa-fw fa-leaf" style="color:#ccff77"></i> ECO ELECTRIC CAR</a>
+	<a class="navbar-brand" href="index.jsp">
+		<i class="fa fa-fw fa-leaf" style="color:#ccff77">
+		</i>
+		 ECO ELECTRIC CAR
+		
+	</a>
 	<button class="navbar-toggler navbar-toggler-right" type="button"
 		data-toggle="collapse" data-target="#navbarResponsive"
 		aria-controls="navbarResponsive" aria-expanded="false"
@@ -35,7 +40,7 @@
 					<span class="nav-link-text">충전소 찾기</span>
 				</a>
 				<ul class="sidenav-second-level collapse" id="collapseComponents">
-					<li><a href="#">하위 항목1</a></li>
+					<li><a href="search.jsp">검색</a></li>
 					<li><a href="#">하위 항목2</a></li>
 					<li><a href="#">하위 항목3</a></li>
 					<li><a href="#">하위 항목4</a></li>
@@ -68,30 +73,29 @@
 			</a></li>
 		</ul>
 		<ul class="navbar-nav ml-auto">
-			<!--           <li class="nav-item">
-            <form class="form-inline my-2 my-lg-0 mr-lg-2">검색어 입력하면 찾을 부분
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="검색어 입력">
-                <span class="input-group-btn">
-                  <button class="btn btn-primary" type="button">
-                    <i class="fa fa-search"></i>
-                  </button>
-                </span>
-              </div>
-            </form>
-          </li> 검색 부분-->
 			<li class="nav-item">
-			 <!--  <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-              <i class="fa fa-fw fa-sign-out"></i>
-              	로그아웃
-            </a> -->
-             <a class="nav-link" href="login.html">
-            	<i class="fa fa-fw fa-sign-in"></i> 로그인
-			</a>
+				<div id="printId" class="nav-link"></div>
+			</li>
+			<li class="nav-item">
+				<div id="printLogin"></div>
 			</li>
 		</ul>
 	</div>
 	</nav>
+	
+	<!-- 로그인 여부 판단 -->
+	<script type="text/javascript">
+		var logId = "${sessionScope.logId}";
+		console.log(logId);
+		if(logId!=""){
+			document.getElementById("printId").innerHTML = "<strong>"+logId+"님</strong>";
+			document.getElementById("printLogin").innerHTML = '<a class="nav-link" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-fw fa-sign-out"></i> 로그아웃</a>';
+		} else {
+			document.getElementById("printId").innerHTML = "";
+			document.getElementById("printLogin").innerHTML = '<a class="nav-link" href="login.html"><i class="fa fa-fw fa-sign-in"></i> 로그인	</a>';
+		}
+		
+	</script>
 
 </body>
 </html>
