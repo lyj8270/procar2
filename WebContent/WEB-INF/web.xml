@@ -19,6 +19,7 @@
     <servlet-name>Test</servlet-name>
     <url-pattern>/Test</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <description></description>
     <display-name>LoginCheck</display-name>
@@ -29,6 +30,19 @@
     <servlet-name>LoginCheck</servlet-name>
     <url-pattern>/log</url-pattern>
   </servlet-mapping>
+  
+   <servlet>
+    <description></description>
+    <display-name>GetAddrList</display-name>
+    <servlet-name>GetAddrList</servlet-name>
+    <servlet-class>controller.GetAddrList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetAddrList</servlet-name>
+    <url-pattern>/address</url-pattern>
+  </servlet-mapping>
+  
+  
   <resource-ref>
     <description>Oracle Datasource example</description>
     <res-ref-name>jdbc/myoracle</res-ref-name>
