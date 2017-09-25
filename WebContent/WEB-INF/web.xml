@@ -42,6 +42,17 @@
     <url-pattern>/address</url-pattern>
   </servlet-mapping>
   
+     <servlet>
+    <description></description>
+    <display-name>GetAddrStationList</display-name>
+    <servlet-name>GetAddrStationList</servlet-name>
+    <servlet-class>controller.GetAddrStationList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetAddrStationList</servlet-name>
+    <url-pattern>/addressStation</url-pattern>
+  </servlet-mapping>
+  
   
   <resource-ref>
     <description>Oracle Datasource example</description>

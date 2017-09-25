@@ -15,7 +15,7 @@
 <link href="css/sb-admin.css" rel="stylesheet">
 
 </head>
-<body class="fixed-nav sticky-footer bg-dark">
+<body>
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
 	
@@ -40,7 +40,7 @@
 					<span class="nav-link-text">충전소 찾기</span>
 				</a>
 				<ul class="sidenav-second-level collapse" id="collapseComponents">
-					<li><a href="search.jsp">검색</a></li>
+					<li><a href="address">검색</a></li>
 					<li><a href="#">하위 항목2</a></li>
 					<li><a href="#">하위 항목3</a></li>
 					<li><a href="#">하위 항목4</a></li>
