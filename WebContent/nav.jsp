@@ -15,7 +15,7 @@
 <link href="css/sb-admin.css" rel="stylesheet">
 
 </head>
-<body>
+<body class="fixed-nav sticky-footer bg-dark">
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
 	
