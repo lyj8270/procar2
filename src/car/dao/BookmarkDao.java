@@ -35,6 +35,28 @@ public class BookmarkDao {
 		return result;
 	}
 	
+	public static int removeOverlap(String id, String sId){
+		int result = 0;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String query = "select * from bookmark where id=? and s_id=?";
+		
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, id);
+			pstmt.setString(2, sId);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+		} finally {
+			DBUtil.close(con, pstmt);
+		}
+		return result;
+		
+	}
+	
 	public static List<StationDto> getBookmarkList(String id){
 		List<StationDto> list = new ArrayList<>();
 		Connection con = null;

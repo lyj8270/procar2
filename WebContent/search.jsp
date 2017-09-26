@@ -147,11 +147,14 @@
 		function resultBookmark(){
 			if(httpRequest.readyState==4 && httpRequest.status==200){
 				var result = httpRequest.responseText.trim();
-				if(result==1){
+				if(result==0){
+					alert("이미 추가된 항목입니다");
+					document.getElementById("bookmarkBtn").innerHTML = "즐겨찾기에 추가된 항목입니다";
+				} else if (result==1) {
 					alert("즐겨찾기에 추가하였습니다");
 					document.getElementById("bookmarkBtn").innerHTML = "즐겨찾기에 추가된 항목입니다";
-				} else {
-					alert("실패하였습니다");
+				} else{
+					alert("로그인 후 이용해주시기 바랍니다");
 				}
 				
 			}

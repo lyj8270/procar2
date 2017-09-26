@@ -31,20 +31,29 @@
 
 	<!-- 본문 틀 -->
 	<div class="content-wrapper">
-		<div class="container-fluid" style="padding-top:5%;padding-left:10%;padding-right:10%;padding-bottom:5%" id="content">
+		<div class="container-fluid" style="padding-top:5%;padding-left:10%;padding-right:10%;padding-bottom:5%;" id="content">
 		<!-- 본문 내용 -->
-		<table>
-			<c:forEach items="${requestScope.bookmarkList}" var="station">
-				<tr><td>${station.sId}</td></tr>
-				<tr><td>${station.sName}</td></tr>
-				<tr><td>${station.addr}</td></tr>
-			</c:forEach>
-		</table>
+		<c:forEach items="${requestScope.bookmarkList}" var="station" varStatus="status">
+			<div class="w3-card-4 w3-half" style="width: 40% ; margin:3%">
+				<header class="w3-container w3-light-grey" style="text-align: center; padding:2%">
+					<h5>${station.sName}</h5>
+				</header>
+				<div class="w3-container">
+					<p>${station.addr}</p>
+					<hr>
+					맵 넣을 부분
+					<div id="map2" style="width: 100%; height: 200px;"></div>
+					<p>기타</p>
+					<br>
+				</div>
+				<button class="w3-button w3-block w3-dark-grey">삭제하기</button>
+			</div>
+		</c:forEach>
 		
-	
-			
-			
-		<!-- 본문 내용 끝 -->
+
+
+
+			<!-- 본문 내용 끝 -->
 		</div>
 	</div>
 	<!-- 본문 틀 끝 -->
@@ -60,6 +69,31 @@
 	<script src="vendor/popper/popper.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.js"></script>
 	<script src="js/sb-admin.js"></script>
+
+	<script type="text/javascript">
+	
+		function getLatLng(index){
+			var latitude = ${requestScope.bookmarkList[index].latitude};
+			var longitude = ${requestScope.bookmarkList[index].longitude};;
+			function myMap(latitude, longitude);
+		}
+
+		function myMap(latitude, longitude) {
+			var myLatlng = new google.maps.LatLng(latitude, longitude);
+	
+			var mapProp = {
+				center : myLatlng,
+				zoom : 18,
+			};
+			var map = new google.maps.Map(document.getElementById("map2"), mapProp);
+			var marker = new google.maps.Marker({
+				position : myLatlng
+			});
+			marker.setMap(map);
+		}
+	</script>
+	<!-- 구글 지도 -->
+	<script	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjvtC_0Hr83DsKOtKr0oamgTdwyBtcuho&callback=myMap"></script>
 
 </body>
 </html>
