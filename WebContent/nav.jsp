@@ -60,7 +60,7 @@
 				</ul>
 			</li>
 		    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="qna">
-		    	<a class="nav-link" href="#">
+		    	<a class="nav-link" href="board.jsp">
               		<i class="fa fa-fw fa-question-circle" style="color:lightblue"></i>
               		<span class="nav-link-text">QnA</span>
             	</a>

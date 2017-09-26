@@ -33,7 +33,7 @@
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary"
 						data-dismiss="modal">취소</button>
-					<a class="btn btn-primary" href="login.html">로그아웃</a>
+					<a class="btn btn-primary" href="logout">로그아웃</a>
 				</div>
 			</div>
 		</div>
