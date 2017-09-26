@@ -11,7 +11,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Creative - Start Bootstrap Theme</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">

@@ -1,55 +1,47 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="car.dto.AddressDto"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="java.util.ArrayList, car.dto.BbsDto" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-<style>
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-th, td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-tr:hover{background-color:#f5f5f5}
-</style>
-
-<title>타이틀</title>
 
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
 <!-- Custom fonts for this template -->
-<link href="vendor/font-awesome/css/font-awesome.css"
-	rel="stylesheet" type="text/css">
+<link href="vendor/font-awesome/css/font-awesome.css" rel="stylesheet"
+	type="text/css">
+<link
+	href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+	rel='stylesheet' type='text/css'>
+<link
+	href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+	rel='stylesheet' type='text/css'>
+
+<!-- Plugin CSS -->
+<link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="css/sb-admin.css" rel="stylesheet">
+<link href="css/creative.css" rel="stylesheet">
 
 <!-- w3school -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark">
 
 	<!-- Navigation -->
 	<jsp:include page="nav.jsp" />
+
+	<section class="bg-primary" id="about">
 
 	<!-- 본문 틀 -->
 	<div class="content-wrapper">
@@ -103,6 +95,7 @@ tr:hover{background-color:#f5f5f5}
 		<!-- 본문 내용 끝 -->
 	</div>
 	<!-- 본문 틀 끝 -->
+	</section>
 	<script type="text/javascript">
 		function textModal(t){
 			document.getElementById('id01').style.display="block";
