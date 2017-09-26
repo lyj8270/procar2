@@ -53,27 +53,25 @@
 
 				<div id="id01" class="w3-modal w3-animate-opacity">
 					<div class="w3-modal-content w3-card-4">
-						<header class="w3-container w3-">
+						<header class="w3-container" style="background-color:#00FF00;">
 							<span
 								onclick="document.getElementById('id01').style.display='none'"
 								class="w3-button w3-large w3-display-topright">&times;</span>
-							<h3 id="header">내용</h3>
+							<h3 id="header">context</h3>
 						</header>
 						<div class="w3-container">
-							<p id="textView"></p>
+							<p id="textView" style="font-size:20px"></p>
 						</div>
-						<footer class="w3-container w3-teal">
-						</footer>
 					</div>
 				</div>
 				<table class="table" style="width: 100%; border:1px solid #dddddd;">
 					<thead>
 						<tr>
-							<th width="10%" style="background-color:#eeeeff; text-align: center;">NUM</th>
-							<th width="25%" style="background-color:#eeeeff; text-align: center;">제목</th>
+							<th width="16%" style="background-color:#eeeeff; text-align: center;">NUM</th>
+							<th width="32%" style="background-color:#eeeeff; text-align: center;">제목</th>
+							<th width="26%" style="background-color:#eeeeff; text-align: center;">작성일시</th>
+							<th width="26%" style="background-color:#eeeeff; text-align: center;">작성자</th>
 							<th width="25%" style="background-color:#eeeeff; text-align: center;">내용</th>
-							<th width="20%" style="background-color:#eeeeff; text-align: center;">작성일시</th>
-							<th colspan="2" width="20%" style="background-color:#eeeeff; padding-left:45px;">작성자</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -81,10 +79,10 @@
 						<tr>
 							<td style="text-align: center;">${data.boardNum}</td>
 							<td style="text-align: center;">${data.title}</td>
-							<td style="text-align: center;">${data.content}</td>
+<%-- 							<td style="text-align: center;">${data.content}</td> --%>
 							<td style="text-align: center;">${data.date}</td>
-							<td style="text-align: right;">${data.id}</td>
-							<td width="10%"><button value="${data.content}" onclick="textModal(value)" class="w3-button w3-light-gray" style="margin-left:40px;">보기</button></td>
+							<td style="text-align: center;">${data.id}</td>
+							<td width="10%"><button value="${data.content}" onclick="textModal(value)" class="w3-button w3-light-gray" style="margin-left:10px;">보기</button></td>
 						</tr>	
 						</c:forEach>
 					</tbody>
