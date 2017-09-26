@@ -14,7 +14,12 @@ import javax.servlet.http.HttpSession;
 import car.dao.BbsDao;
 
 public class BbsManager extends HttpServlet {
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		request.setAttribute("board", BbsDao.allViewBbs());
+		request.getRequestDispatcher("board.jsp").forward(request, response);
+	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		System.out.println(1);
 		request.setCharacterEncoding("utf-8");
 		String bt = request.getParameter("bbsTitle");
 		String bc = request.getParameter("bbsContent");
@@ -25,6 +30,7 @@ public class BbsManager extends HttpServlet {
 		} else {
 		//현재시간 구하기
 		String inDate   = new java.text.SimpleDateFormat("yyyyMMdd").format(new java.util.Date());
+		System.out.println(inDate);
 		/////////////////////////////////////////////////////////////////////
 		BbsDao.addBbs(bt,bc,id,inDate);
 		request.setAttribute("board", BbsDao.allViewBbs());
