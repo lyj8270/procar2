@@ -34,6 +34,7 @@
 
 	<!-- Navigation -->
 	<jsp:include page="nav.jsp" />
+	
 	<section class="bg-primary" id="about">
 
 	<!-- 본문 틀 -->
