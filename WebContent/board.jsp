@@ -110,9 +110,6 @@ tr:hover{background-color:#f5f5f5}
 		}
 	</script>
 	
-	<!-- footer -->
-	<jsp:include page="footer.jsp" />
-
 	<!-- logoutModal -->
 	<jsp:include page="logoutModal.jsp" />
 	

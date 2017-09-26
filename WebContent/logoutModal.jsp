@@ -11,9 +11,6 @@
 <link href="vendor/font-awesome/css/font-awesome.css"
 	rel="stylesheet" type="text/css">
 
-<!-- Custom styles for this template -->
-<link href="css/sb-admin.css" rel="stylesheet">
-
 </head>
 <body>
 <!-- Logout Modal -->

@@ -1,42 +1,47 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="car.dto.AddressDto"%> 
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author" content="">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
+    <title>글쓰기</title>
 
-<title>타이틀</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
-<!-- Bootstrap core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
-<!-- Custom fonts for this template -->
-<link href="vendor/font-awesome/css/font-awesome.css"
-	rel="stylesheet" type="text/css">
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
-<!-- Custom styles for this template -->
-<link href="css/sb-admin.css" rel="stylesheet">
-
-<!-- w3school -->
+    <!-- Custom styles for this template -->
+    <link href="css/creative.css" rel="stylesheet">
+    
+    <!-- w3school -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark">
 
 	<!-- Navigation -->
 	<jsp:include page="nav.jsp" />
+	
+	<section class="bg-primary" id="about">
 
 	<!-- 본문 틀 -->
 	<div class="content-wrapper">
 		<!-- 본문 내용 -->
-		<div class="container-fluid" style="padding-top:5%;padding-left:5%;padding-right:10%;padding-bottom:5%">
+		<div class="container-fluid" style="padding-top:5%;padding-left:10%;padding-right:10%;padding-bottom:5%">
 			<div class="w3-content w3-section" style="width: 100%">
 				<h2>QnA Board</h2>
 				<p>궁금한 사항을 남겨주세요</p>
@@ -63,16 +68,16 @@
 		<!-- 본문 내용 끝 -->
 	</div>
 	<!-- 본문 틀 끝 -->
-	
-	<!-- footer -->
-	<jsp:include page="footer.jsp" />
+	</section>
 
-	<!-- logoutModal -->
+<!-- Logout Modal -->
 	<jsp:include page="logoutModal.jsp" />
-	
+
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.js"></script>
 	<script src="vendor/popper/popper.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.js"></script>
+	<script src="js/sb-admin.js"></script>
+
 </body>
 </html>

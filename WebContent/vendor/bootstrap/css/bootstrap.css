@@ -1989,14 +1989,14 @@ fieldset[disabled] a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: rgb(1, 176, 5);
+  border-color: rgb(1, 176, 5);
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #0069d9;
-  border-color: #0062cc;
+  background-color: rgb(128, 234, 38);
+  border-color: rgb(128, 234, 38);
 }
 
 .btn-primary:focus, .btn-primary.focus {
@@ -2185,8 +2185,8 @@ fieldset[disabled] a.btn {
 
 .btn-dark {
   color: #fff;
-  background-color: #343a40;
-  border-color: #343a40;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
 }
 
 .btn-dark:hover {
@@ -2200,8 +2200,8 @@ fieldset[disabled] a.btn {
 }
 
 .btn-dark.disabled, .btn-dark:disabled {
-  background-color: #343a40;
-  border-color: #343a40;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
 }
 
 .btn-dark:active, .btn-dark.active,
@@ -2415,16 +2415,16 @@ fieldset[disabled] a.btn {
 }
 
 .btn-outline-dark {
-  color: #343a40;
+  color: #FFFFFF;
   background-color: transparent;
   background-image: none;
-  border-color: #343a40;
+  border-color: #FFFFFF;
 }
 
 .btn-outline-dark:hover {
   color: #fff;
-  background-color: #343a40;
-  border-color: #343a40;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
 }
 
 .btn-outline-dark:focus, .btn-outline-dark.focus {
@@ -2432,15 +2432,15 @@ fieldset[disabled] a.btn {
 }
 
 .btn-outline-dark.disabled, .btn-outline-dark:disabled {
-  color: #343a40;
+  color: #FFFFFF;
   background-color: transparent;
 }
 
 .btn-outline-dark:active, .btn-outline-dark.active,
 .show > .btn-outline-dark.dropdown-toggle {
   color: #fff;
-  background-color: #343a40;
-  border-color: #343a40;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
 }
 
 .btn-link {
@@ -4068,7 +4068,7 @@ tbody.collapse.show {
 
 .badge-dark {
   color: #fff;
-  background-color: #343a40;
+  background-color: #FFFFFF;
 }
 
 .badge-dark[href]:focus, .badge-dark[href]:hover {
@@ -5231,7 +5231,7 @@ button.close {
 }
 
 .bg-primary {
-  background-color: #007bff !important;
+  background-color: #FDFDFD !important;
 }
 
 a.bg-primary:focus, a.bg-primary:hover {
@@ -5287,7 +5287,7 @@ a.bg-light:focus, a.bg-light:hover {
 }
 
 .bg-dark {
-  background-color: #343a40 !important;
+  background-color: #FFFFFF !important;
 }
 
 a.bg-dark:focus, a.bg-dark:hover {
@@ -5355,7 +5355,7 @@ a.bg-dark:focus, a.bg-dark:hover {
 }
 
 .border-dark {
-  border-color: #343a40 !important;
+  border-color: #FFFFFF !important;
 }
 
 .border-white {
@@ -8156,7 +8156,7 @@ a.text-light:focus, a.text-light:hover {
 }
 
 .text-dark {
-  color: #343a40 !important;
+  color: #FFFFFF !important;
 }
 
 a.text-dark:focus, a.text-dark:hover {
