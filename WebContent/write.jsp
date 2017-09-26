@@ -46,7 +46,7 @@
 				<h2>QnA Board</h2>
 				<p>궁금한 사항을 남겨주세요</p>
 				<form action="bbs" method="post">
-					<table class="table table-striped" style="width: 100%; border:1px solid #dddddd;">
+					<table class="table" style="width: 100%; border:1px solid #dddddd;">
 					<thead>
 						<tr>
 							<th colspan="2" style="background-color:#eeeeff; text-align: center;">게시판 글쓰기</th>
@@ -57,7 +57,7 @@
 							<td><input type="text" class="form-control" placeholder="글제목" name="bbsTitle" maxlength="50"></td>
 						</tr>
 						<tr>
-							<td><textarea type="text" class="form-control" placeholder="글내용" name="bbsContent" maxlength="2048" style="height:350px;"></textarea></td>
+							<td><textarea class="form-control" placeholder="글내용" name="bbsContent" maxlength="2048" style="height:350px;"></textarea></td>
 						</tr>
 					</tbody>
 				</table>	
@@ -69,6 +69,9 @@
 	</div>
 	<!-- 본문 틀 끝 -->
 	</section>
+	<script type="text/javascript">
+		
+	</script>
 
 <!-- Logout Modal -->
 	<jsp:include page="logoutModal.jsp" />

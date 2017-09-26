@@ -79,7 +79,6 @@
 						<tr>
 							<td style="text-align: center;">${data.boardNum}</td>
 							<td style="text-align: center;">${data.title}</td>
-<%-- 							<td style="text-align: center;">${data.content}</td> --%>
 							<td style="text-align: center;">${data.date}</td>
 							<td style="text-align: center;">${data.id}</td>
 							<td width="10%"><button value="${data.content}" onclick="textModal(value)" class="w3-button w3-light-gray" style="margin-left:10px;">보기</button></td>

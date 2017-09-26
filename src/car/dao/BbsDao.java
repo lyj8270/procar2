@@ -40,7 +40,7 @@ public class BbsDao {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		sql = "select * from board";
+		sql = "select * from board where rownum <=5 order by board_date desc"; 
 		try {
 			con = DBUtil.getConnection();
 			pstmt = con.prepareStatement(sql);
@@ -49,7 +49,7 @@ public class BbsDao {
 			list.add(new BbsDto(rs.getInt(1),
 			rs.getString(2),
 			rs.getString(3),
-			rs.getString(4),
+			rs.getString(4).substring(0, 10),
 			rs.getString(5)));
 			}
 		} catch (SQLException e) {
