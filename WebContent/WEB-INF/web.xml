@@ -72,12 +72,12 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>Bbs</display-name>
-    <servlet-name>Bbs</servlet-name>
+    <display-name>BbsManager</display-name>
+    <servlet-name>BbsManager</servlet-name>
     <servlet-class>controller.BbsManager</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Bbs</servlet-name>
+    <servlet-name>BbsManager</servlet-name>
     <url-pattern>/bbs</url-pattern>
   </servlet-mapping>
 </web-app>
