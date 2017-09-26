@@ -31,7 +31,7 @@
               <a class="nav-link js-scroll-trigger" href="address"><i class="fa fa-fw fa-search" style="color:#fff"></i>충전소검색</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="Bookmark"><i class="fa fa-fw fa-star" style="color:#FFFF7E"></i>즐겨찾기</a>
+              <a class="nav-link js-scroll-trigger" href="book"><i class="fa fa-fw fa-star" style="color:#FFFF7E"></i>즐겨찾기</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="bbs?"><i class="fa fa-fw fa-question-circle" style="color:#B2EBF4"></i>QnA</a>
