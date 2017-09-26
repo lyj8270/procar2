@@ -94,4 +94,25 @@
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
   
+    <servlet>
+    <description></description>
+    <display-name>AddBookmark</display-name>
+    <servlet-name>AddBookmark</servlet-name>
+    <servlet-class>controller.AddBookmark</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddBookmark</servlet-name>
+    <url-pattern>/AddBookmark</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Bookmark</display-name>
+    <servlet-name>Bookmark</servlet-name>
+    <servlet-class>controller.Bookmark</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Bookmark</servlet-name>
+    <url-pattern>/Bookmark</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

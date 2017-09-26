@@ -47,24 +47,20 @@
 				</ul>
 			</li>
 
-			<li class="nav-item" data-toggle="tooltip" data-placement="right" title="bookmark">
-				<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages"	data-parent="#exampleAccordion">
-					<i class="fa fa-fw fa-star" style="color:#ffff99"></i>
+	    	<li class="nav-item" data-toggle="tooltip" data-placement="right" title="qna">
+		    	<a class="nav-link" href="Bookmark">
+              		<i class="fa fa-fw fa-star" style="color:#ffff99"></i>
 					<span class="nav-link-text">즐겨찾기</span>
-				</a>
-				<ul class="sidenav-second-level collapse" id="collapseExamplePages">
-					<li><a href="#">하위 항목1</a></li>
-					<li><a href="#">하위 항목2</a></li>
-					<li><a href="#">하위 항목3</a></li>
-					<li><a href="#">하위 항목4</a></li>
-				</ul>
-			</li>
+            	</a>
+        	</li>
+        	
 		    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="qna">
 		    	<a class="nav-link" href="board.jsp">
               		<i class="fa fa-fw fa-question-circle" style="color:lightblue"></i>
               		<span class="nav-link-text">QnA</span>
             	</a>
         	</li>
+	
 		</ul>
 
 		<ul class="navbar-nav sidenav-toggler">

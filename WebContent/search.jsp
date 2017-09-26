@@ -1,5 +1,5 @@
 <%@page import="java.util.ArrayList"%>
-<%@page import="car.dto.AddressDto"%>
+<%@page import="car.dto.AddressDto"%> 
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -38,6 +38,7 @@
 			style="padding-top: 5%; padding-left: 10%; padding-right: 10%; padding-bottom: 5%"
 			id="content">
 			<!-- 본문 내용 -->
+			<h2>충전소 찾기</h2><br>
 			
 			<!-- 지역 선택 -->
 			<div class="w3-half" style="padding-left: 2%; padding-right: 2%">
@@ -65,6 +66,11 @@
 				
 				</table>
 			</div>
+			<br>
+			<div id="bookmarkBtn" style="text-align: center">
+			</div>
+			
+			
 			
 
 
@@ -113,6 +119,7 @@
 		
 		function reqStation(index){
 			var tagInPrint = "";
+			var tagInBookmarkBtn = "";
 			var sName = data[index].sName;
 			var addr = data[index].addr;
 			var type = data[index].type;
@@ -123,10 +130,34 @@
 				'<tr><td style="width:30%"><strong>충전소 이름</strong></td><td>'+sName+'</td></tr>'+
 				'<tr><td style="width:30%"><strong>주소</strong></td><td>'+addr+'</td></tr>'+
 				'<tr><td style="width:30%"><strong>타입</strong></td><td>'+type+'</td></tr>';
+				
+			tagInBookmarkBtn = '<button class="w3-button w3-white w3-border w3-round-large" onclick="addBookmark('+data[index].sId+')">'+
+									'<i class="fa fa-fw fa-star" style="color:#FFFF00"></i>&nbsp;&nbsp;즐겨찾기 추가'+
+							   '</button>';
 			
 			myMap(latitude, longitude);
 			document.getElementById("print").innerHTML = tagInPrint;
+			document.getElementById("bookmarkBtn").innerHTML = tagInBookmarkBtn;
 		}
+		
+		function addBookmark(sId){
+			sendRequest("AddBookmark", "sId="+sId, resultBookmark, "POST");
+		}
+		
+		function resultBookmark(){
+			if(httpRequest.readyState==4 && httpRequest.status==200){
+				var result = httpRequest.responseText.trim();
+				if(result==1){
+					alert("즐겨찾기에 추가하였습니다");
+					document.getElementById("bookmarkBtn").innerHTML = "즐겨찾기에 추가된 항목입니다";
+				} else {
+					alert("실패하였습니다");
+				}
+				
+			}
+		}
+		
+	
 		
  		function myMap(latitude, longitude) {
  			var myLatlng = new google.maps.LatLng(latitude, longitude);
