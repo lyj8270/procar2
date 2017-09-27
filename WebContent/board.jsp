@@ -84,6 +84,12 @@
 							<td width="10%"><button value="${data.content}" onclick="textModal(value)" class="w3-button w3-light-gray" style="margin-left:10px;">보기</button></td>
 						</tr>	
 						</c:forEach>
+						<c:if test="${param.pageNum!=1}">
+							<a href="bbs?page=page-1" class="btn btn-success btn-arrow-left">이전</a>
+						</c:if>
+						<c:if test="${param.pageNum!=1}">
+							<a href="bbs?page=page+1" class="btn btn-success btn-arrow-left">이전</a>
+						</c:if>
 					</tbody>
 				</table>
 				<a href="write.jsp" class = "btn btn-primary pull-right">글쓰기</a>
