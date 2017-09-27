@@ -46,7 +46,7 @@
 	<!-- 본문 틀 -->
 	<div class="content-wrapper">
 		<!-- 본문 내용 -->
-		<div class="container-fluid" style="padding-top:5%;padding-left:5%;padding-right:10%;padding-bottom:5%">
+		<div class="container-fluid" style="padding-top:5%;padding-left:10%;padding-right:10%;padding-bottom:5%">
 			<div class="w3-content w3-section" style="width: 100%">
 				<h2>QnA Board</h2>
 				<p>궁금한 사항을 남겨주세요</p>
