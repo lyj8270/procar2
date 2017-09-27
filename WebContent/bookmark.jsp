@@ -54,17 +54,21 @@
 
 					<!-- 본문 내용 -->
 					<table class="w3-table w3-bordered" id="bookTable"
-						style="width: 100%">
+						style="width:100%;">
 						<c:forEach items="${requestScope.bookmarkList}" var="data">
 							<tr>
 								<td>${data.sName}</td>
 								<td>${data.addr}</td>
 								<td>${data.type}</td>
-								<td><button id="${data.sId}"
-										onclick="deleteBookmark(this.id)">삭제</button></td>
-								<td><button
-										onclick="viewMap('${data.sName}','${data.latitude}','${data.longitude}')">지도
-										보기</button></td>
+							  	<td	onclick="viewMap('${data.sName}','${data.addr}','${data.latitude}','${data.longitude}')">
+							  	<i class="fa fa-fw fa-map" style="color:#47C83E;cursor: pointer">
+								</i>지도보기</td>
+								<td>
+								<i class="fa fa-fw fa-times" style="color:#DF4D4D;cursor: pointer"
+								   id="${data.sId}"
+								   onclick="deleteBookmark(this.id)"></i>
+								</td>
+
 							</tr>
 						</c:forEach>
 					</table>
@@ -79,6 +83,7 @@
 									onclick="document.getElementById('id01').style.display='none'"
 									class="w3-button w3-display-topright">&times;</span>
 								<div id="mapTitle"></div>
+								<div id="mapAddr"></div>
 							</header>
 							<br>
 							<br>
@@ -124,17 +129,24 @@
 						+ '<td>' + jsonData[i].sName + '</td>'
 						+ '<td>' + jsonData[i].addr + '</td>'
 						+ '<td>' + jsonData[i].type + '</td>'
-						+ '<td><button id="' + jsonData[i].sId + '" onclick="deleteBookmark(this.id)">삭제</button></td>'
-						+ '<td><button onclick="viewMap(\'' + jsonData[i].sName + '\',\'' + jsonData[i].latitude + '\',\'' + jsonData[i].longitude + '\')">지도 보기</button></td>'
-						+ '</tr>';
+						+'<td onclick="viewMap(\'' + jsonData[i].sName + '\',\'' + jsonData[i].latitude + '\',\'' + jsonData[i].longitude + '\')">'
+						+'<i class="fa fa-fw fa-map" style="color:#47C83E;cursor: pointer"></i>지도보기'
+						+'</td>'
+						+'<td>'
+						+'<i class="fa fa-fw fa-times" style="color:#DF4D4D;cursor: pointer"'
+						+'   id="' + jsonData[i].sId + '"'
+						+'   onclick="deleteBookmark(this.id)"></i>'
+						+'</td>'
+						+'</tr>';
 				}
 				document.getElementById("bookTable").innerHTML = tagInTable;
 			}
 		}
 	
-		function viewMap(sName, latitude, longitude) {
+		function viewMap(sName,addr, latitude, longitude) {
 			document.getElementById('id01').style.display = 'block';
 			document.getElementById('mapTitle').innerHTML = '<h2>' + sName + '</h2>';
+			document.getElementById('mapAddr').innerHTML = addr;
 			myMap(latitude, longitude);
 		}
 	

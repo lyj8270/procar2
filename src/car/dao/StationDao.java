@@ -113,6 +113,38 @@ public class StationDao {
 		return list;
 	}
 	
-	
-	
+	// 검색어에 따라 리스트 반환하는 메서드
+	public static ArrayList<StationDto> getWordsList(String words){
+		ArrayList<StationDto> list = new ArrayList<>();
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		String sql = "select * from station"
+						+" where s_name like '%"+words+"%'"
+						+" or addr like '%"+words+"%'"
+						+" or type like '%"+words+"%'";
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sql);
+			rset = pstmt.executeQuery();
+			
+			while (rset.next()) {
+				list.add(new StationDto(
+						rset.getInt(1),
+						rset.getString(2),
+						rset.getString(3),
+						rset.getString(4),
+						rset.getString(5),
+						rset.getString(6),
+						rset.getInt(7)
+				));
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBUtil.close(con, pstmt, rset);
+		}
+		return list;
+	}
 }

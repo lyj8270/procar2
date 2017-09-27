@@ -50,9 +50,8 @@
 			<div class="container-fluid" style="padding-top: 5%; padding-left: 10%; padding-right: 10%; padding-bottom: 5%">
 				<div class="w3-content w3-section" style="width: 100%">
 				<h2>충전소 찾기</h2>
-				<p>지역과 충전소를 선택해주세요</p>
-
-				<!-- 지역 선택 -->
+				<p>지역과 충전소를 선택하세요</p>
+			    <!-- 지역 선택 -->
 				<div class="w3-half" style="padding-left: 2%; padding-right: 2%">
 					<select class="w3-select w3-border-white"
 						onchange="reqAddr(this.value)">
@@ -72,6 +71,18 @@
 				<br>
 				<br>
 				<br>
+				<br>
+				<br>
+				
+				<p>검색어를 입력하세요</p>
+				<!-- 검색 -->
+				<input class="w3-input" type="text" value="" oninput="searchWords(this.value)">
+				<div style="height:120px">
+					<table class="w3-table w3-hoverable" id="wordsOption" style="font-size:small;">
+					
+					</table>
+				</div>
+				<br><br>
 
 				<!-- Map 출력 -->
 				<div id="map" style="width: 100%; height: 400px;"></div>
@@ -84,8 +95,9 @@
 					</table>
 				</div>
 				<br>
-				<div id="bookmarkBtn" style="text-align: center"></div>
+				<div id="bookmarkBtn" style="text-align: center;"></div>
 				</div>
+				
 				<!-- 본문 내용 끝 -->
 			</div>
 		</div>
@@ -144,7 +156,7 @@
 				'<tr><td style="width:30%"><strong>타입</strong></td><td>' + type + '</td></tr>';
 	
 			tagInBookmarkBtn = '<button class="w3-button w3-white w3-border w3-round-large" onclick="addBookmark(' + data[index].sId + ')">' +
-				'<i class="fa fa-fw fa-star" style="color:#FFFF00"></i>&nbsp;&nbsp;즐겨찾기 추가' +
+				'<i class="fa fa-fw fa-star" style="color:#FFFF00;"></i>&nbsp;&nbsp;즐겨찾기 추가' +
 				'</button>';
 	
 			myMap(latitude, longitude);
@@ -172,8 +184,6 @@
 			}
 		}
 	
-	
-	
 		function myMap(latitude, longitude) {
 			var myLatlng = new google.maps.LatLng(latitude, longitude);
 	
@@ -186,6 +196,30 @@
 				position : myLatlng
 			});
 			marker.setMap(map);
+		}
+		
+		function searchWords(value){
+			if(value != ""){
+				sendRequest("SearchWords","words="+value, viewWords, "POST");
+			} else {
+				document.getElementById("wordsOption").innerHTML = "";
+			}
+		}
+		
+		function viewWords(){
+			if(httpRequest.readyState==4 && httpRequest.status==200){
+				data = httpRequest.responseText.trim();
+				if(data != "[]"){
+					data = JSON.parse(data);
+					var tagInOption = "";
+					
+					for(i=0 ; i<data.length ; i++){
+						tagInOption += '<tr><td onclick="reqStation('+i+')">'+data[i].sName+'</td></tr>';
+					}
+					
+					document.getElementById("wordsOption").innerHTML = tagInOption;
+				}
+			}
 		}
 	</script>
 

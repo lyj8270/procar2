@@ -110,4 +110,14 @@
     <servlet-name>DeleteBookmark</servlet-name>
     <url-pattern>/DeleteBookmark</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SearchWords</display-name>
+    <servlet-name>SearchWords</servlet-name>
+    <servlet-class>controller.SearchWords</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchWords</servlet-name>
+    <url-pattern>/SearchWords</url-pattern>
+  </servlet-mapping>
 </web-app>
