@@ -15,10 +15,13 @@ import javax.servlet.http.HttpSession;
 import car.dao.BbsDao;
 
 public class BbsManager extends HttpServlet {
+	// 글 읽기
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		request.setAttribute("board", BbsDao.allViewBbs());
 		request.getRequestDispatcher("board.jsp").forward(request, response);
 	}
+	
+	// 글 쓰기
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=euc-kr");

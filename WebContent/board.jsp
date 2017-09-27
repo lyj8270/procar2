@@ -53,21 +53,21 @@
 
 				<div id="id01" class="w3-modal w3-animate-opacity">
 					<div class="w3-modal-content w3-card-4">
-						<header class="w3-container" style="background-color:#00FF00;">
+						<header class="w3-container" style="background-color:#00FF00; padding:2%">
 							<span
 								onclick="document.getElementById('id01').style.display='none'"
-								class="w3-button w3-large w3-display-topright">&times;</span>
-							<h3 id="header">context</h3>
+								class="w3-button w3-small w3-display-topright">&times;</span>
+							<div id="header"></div>
 						</header>
 						<div class="w3-container">
-							<p id="textView" style="font-size:20px"></p>
+							<p id="textView" style="font-size:20px; padding:2%"></p>
 						</div>
 					</div>
 				</div>
 				<table class="table" style="width: 100%; border:1px solid #dddddd;">
 					<thead>
 						<tr>
-							<th width="16%" style="background-color:#eeeeff; text-align: center;">NUM</th>
+							<th width="16%" style="background-color:#eeeeff; text-align: center;">게시글 번호</th>
 							<th width="32%" style="background-color:#eeeeff; text-align: center;">제목</th>
 							<th width="26%" style="background-color:#eeeeff; text-align: center;">작성일시</th>
 							<th width="26%" style="background-color:#eeeeff; text-align: center;">작성자</th>
@@ -81,14 +81,14 @@
 							<td style="text-align: center;">${data.title}</td>
 							<td style="text-align: center;">${data.date}</td>
 							<td style="text-align: center;">${data.id}</td>
-							<td width="10%"><button value="${data.content}" onclick="textModal(value)" class="w3-button w3-light-gray" style="margin-left:10px;">보기</button></td>
+							<td width="10%"><button onclick="textModal('${data.title}','${data.content}')" class="w3-button w3-light-gray" style="margin-left:10px;">보기</button></td>
 						</tr>	
 						</c:forEach>
 						<c:if test="${param.pageNum!=1}">
 							<a href="bbs?page=page-1" class="btn btn-success btn-arrow-left">이전</a>
 						</c:if>
 						<c:if test="${param.pageNum!=1}">
-							<a href="bbs?page=page+1" class="btn btn-success btn-arrow-left">이전</a>
+							<a href="bbs?page=page+1" class="btn btn-success btn-arrow-left">다음</a>
 						</c:if>
 					</tbody>
 				</table>
@@ -100,9 +100,10 @@
 	<!-- 본문 틀 끝 -->
 	</section>
 	<script type="text/javascript">
-		function textModal(t){
+		function textModal(title, content){
 			document.getElementById('id01').style.display="block";
-			document.getElementById("textView").innerHTML = t;
+			document.getElementById("header").innerHTML = "<h3>"+title+"</h3>";
+			document.getElementById("textView").innerHTML = content;
 		}
 	</script>
 	

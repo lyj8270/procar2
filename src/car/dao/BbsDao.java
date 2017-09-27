@@ -41,6 +41,7 @@ public class BbsDao {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		sql = "select * from board where rownum <=5 order by board_date desc"; 
+		
 		try {
 			con = DBUtil.getConnection();
 			pstmt = con.prepareStatement(sql);
