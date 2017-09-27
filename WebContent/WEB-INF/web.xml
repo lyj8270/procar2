@@ -4,7 +4,6 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
-  
   <servlet>
     <description></description>
     <display-name>Test</display-name>
@@ -15,7 +14,6 @@
     <servlet-name>Test</servlet-name>
     <url-pattern>/Test</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>LoginCheck</display-name>
@@ -26,8 +24,7 @@
     <servlet-name>LoginCheck</servlet-name>
     <url-pattern>/log</url-pattern>
   </servlet-mapping>
-  
-   <servlet>
+  <servlet>
     <description></description>
     <display-name>GetAddrList</display-name>
     <servlet-name>GetAddrList</servlet-name>
@@ -37,8 +34,7 @@
     <servlet-name>GetAddrList</servlet-name>
     <url-pattern>/address</url-pattern>
   </servlet-mapping>
-  
-     <servlet>
+  <servlet>
     <description></description>
     <display-name>GetAddrStationList</display-name>
     <servlet-name>GetAddrStationList</servlet-name>
@@ -48,15 +44,12 @@
     <servlet-name>GetAddrStationList</servlet-name>
     <url-pattern>/addressStation</url-pattern>
   </servlet-mapping>
-  
-  
   <resource-ref>
     <description>Oracle Datasource example</description>
     <res-ref-name>jdbc/myoracle</res-ref-name>
     <res-type>javax.sql.DataSource</res-type>
     <res-auth>Container</res-auth>
   </resource-ref>
-  
   <servlet>
     <description></description>
     <display-name>Register</display-name>
@@ -67,7 +60,6 @@
     <servlet-name>Register</servlet-name>
     <url-pattern>/register</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>BbsManager</display-name>
@@ -78,8 +70,7 @@
     <servlet-name>BbsManager</servlet-name>
     <url-pattern>/bbs</url-pattern>
   </servlet-mapping>
-  
-   <servlet>
+  <servlet>
     <description></description>
     <display-name>Logout</display-name>
     <servlet-name>Logout</servlet-name>
@@ -89,8 +80,7 @@
     <servlet-name>Logout</servlet-name>
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
-  
-    <servlet>
+  <servlet>
     <description></description>
     <display-name>AddBookmark</display-name>
     <servlet-name>AddBookmark</servlet-name>
@@ -110,5 +100,14 @@
     <servlet-name>Bookmark</servlet-name>
     <url-pattern>/book</url-pattern>
   </servlet-mapping>
-  
+  <servlet>
+    <description></description>
+    <display-name>DeleteBookmark</display-name>
+    <servlet-name>DeleteBookmark</servlet-name>
+    <servlet-class>controller.DeleteBookmark</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteBookmark</servlet-name>
+    <url-pattern>/DeleteBookmark</url-pattern>
+  </servlet-mapping>
 </web-app>

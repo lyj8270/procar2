@@ -49,6 +49,5 @@ public class GetAddrStationList extends HttpServlet {
 			}
 		}
 		response.getWriter().println(sb.toString());
-	
 	}
 }

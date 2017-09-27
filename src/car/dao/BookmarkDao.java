@@ -88,6 +88,25 @@ public class BookmarkDao {
 		}
 		return list;
 	}
+	
+	public static int delete(String id, String sId){
+		int result = 0;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String query = "delete from bookmark where id=? and s_id=?";
+		
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, id);
+			pstmt.setString(2, sId);
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+		} finally {
+			DBUtil.close(con, pstmt);
+		}
+		return result;
+	}
 }
 
 

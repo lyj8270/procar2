@@ -27,9 +27,10 @@ public class Bookmark extends HttpServlet {
 		if(session != null){
 			String logId = (String)session.getAttribute("logId");
 			if(logId != null){
-				StringBuilder sb = new StringBuilder();
-				List<StationDto> stationList = BookmarkDao.getBookmarkList(logId);
 				
+				List<StationDto> stationList = BookmarkDao.getBookmarkList(logId);
+				request.setAttribute("bookmarkList", stationList);
+				StringBuilder sb = new StringBuilder();
 				sb.append("[");
 				for (int i = 0; i < stationList.size(); i++) {
 
@@ -57,8 +58,7 @@ public class Bookmark extends HttpServlet {
 						sb.append("\"},");
 					}
 				}
-				request.setAttribute("bookmarkJson", sb.toString());
-				request.setAttribute("bookmarkList", stationList);
+				request.setAttribute("bookmarkJson",sb.toString());
 				request.getRequestDispatcher("bookmark.jsp").forward(request, response);
 			} else {
 				out.println("<script>");

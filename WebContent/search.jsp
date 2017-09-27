@@ -46,10 +46,10 @@
 		<!-- 본문 틀 -->
 		<div class="content-wrapper">
 			<!-- 본문 내용 -->
-			<div class="container-fluid"
-				style="padding-top: 5%; padding-left: 10%; padding-right: 10%; padding-bottom: 5%">
+			<div class="container-fluid" style="padding-top: 5%; padding-left: 10%; padding-right: 10%; padding-bottom: 5%">
+				<div class="w3-content w3-section" style="width: 100%">
 				<h2>충전소 찾기</h2>
-				<br>
+				<p>지역과 충전소를 선택해주세요</p>
 
 				<!-- 지역 선택 -->
 				<div class="w3-half" style="padding-left: 2%; padding-right: 2%">
@@ -84,8 +84,7 @@
 				</div>
 				<br>
 				<div id="bookmarkBtn" style="text-align: center"></div>
-
-
+				</div>
 				<!-- 본문 내용 끝 -->
 			</div>
 		</div>
@@ -105,6 +104,7 @@
 	<script src="vendor/bootstrap/js/bootstrap.js"></script>
 
 	<script type="text/javascript" src="js/httpRequest.js"></script>
+	
 	<script type="text/javascript">
 		var data;
 	

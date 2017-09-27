@@ -1,33 +1,40 @@
 <%@page import="car.dto.StationDto"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="car.dto.AddressDto"%> 
+<%@page import="car.dto.AddressDto"%>
 <%@page import="java.util.List"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
 
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
-    <!-- Custom fonts for this template -->
-    <link href="vendor/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<!-- Custom fonts for this template -->
+<link href="vendor/font-awesome/css/font-awesome.css" rel="stylesheet"
+	type="text/css">
+<link
+	href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+	rel='stylesheet' type='text/css'>
+<link
+	href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+	rel='stylesheet' type='text/css'>
 
-    <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+<!-- Plugin CSS -->
+<link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="css/creative.css" rel="stylesheet">
-    
-    <!-- w3school -->
+<!-- Custom styles for this template -->
+<link href="css/creative.css" rel="stylesheet">
+
+<!-- w3school -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
@@ -35,26 +42,57 @@
 
 	<!-- Navigation -->
 	<jsp:include page="nav.jsp" />
-	
+
 	<section class="bg-primary" id="about">
+		<!-- 본문 틀 -->
+		<div class="content-wrapper">
+			<div class="container-fluid"
+				style="padding-top: 5%; padding-left: 10%; padding-right: 10%; padding-bottom: 5%;">
+				<div class="w3-content w3-section" style="width: 100%">
+					<h2>즐겨찾기</h2>
+					<p>등록한 즐겨찾기 목록입니다</p>
 
-	<!-- 본문 틀 -->
-	<div class="content-wrapper">
-		<div class="container-fluid" style="padding-top:5%;padding-left:10%;padding-right:10%;padding-bottom:5%;" id="content">
-		<!-- 본문 내용 -->
-		
-			<!-- 지도 -->
-			<div id="map" style="width:95%; height:500px; margin:5% auto" ></div>
-			<div style="width:95%; margin:5% auto">
-				<table class="w3-table w3-bordered" id="bookList"></table>
+					<!-- 본문 내용 -->
+					<table class="w3-table w3-bordered" id="bookTable"
+						style="width: 100%">
+						<c:forEach items="${requestScope.bookmarkList}" var="data">
+							<tr>
+								<td>${data.sName}</td>
+								<td>${data.addr}</td>
+								<td>${data.type}</td>
+								<td><button id="${data.sId}"
+										onclick="deleteBookmark(this.id)">삭제</button></td>
+								<td><button
+										onclick="viewMap('${data.sName}','${data.latitude}','${data.longitude}')">지도
+										보기</button></td>
+							</tr>
+						</c:forEach>
+					</table>
+
+
+					<!-- map modal -->
+					<div id="id01" class="w3-modal">
+						<div class="w3-modal-content w3-animate-zoom w3-card-4"
+							style="padding: 3%">
+							<header class="w3-container">
+								<span
+									onclick="document.getElementById('id01').style.display='none'"
+									class="w3-button w3-display-topright">&times;</span>
+								<div id="mapTitle"></div>
+							</header>
+							<br>
+							<br>
+							<div class="w3-container">
+								<div id="mapContent" style="width: 100%; height: 400px;"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 본문 내용 끝 -->
 			</div>
-
-		<!-- 본문 내용 끝 -->
 		</div>
-	</div>
-	<!-- 본문 틀 끝 -->
+		<!-- 본문 틀 끝 -->
 	</section>
-
 
 	<!-- Logout Modal -->
 	<jsp:include page="logoutModal.jsp" />
@@ -65,88 +103,55 @@
 	<script src="vendor/bootstrap/js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/httpRequest.js"></script>
 
-
 	<script>
-		/* 즐겨찾기 배열과 함수 선언 */
-		var stations = [];
-		function station(sId, sName, latitude, longitude, index){
-			this.sId = sId;
-			this.sName = sName;
-			this.latitude = latitude;
-			this.longitude = longitude;
-			this.index = index;
-			
-			this.getSId = function(){
-				return this.sId;
-			};
-			this.getSName = function(){
-				return this.sName;
-			};
-			this.getLatitude = function(){
-				return this.latitude;
-			};
-			this.getLongitude = function(){
-				return this.longitude;
-			};
-			this.getIndex = function(){
-				return this.index;
-			};
-		};
-		
-		/* JSON으로 값 받아와 객체 생성 후 배열에 저장, table에 표시 */
-		var data = '${requestScope.bookmarkJson}';
-		var jsonBookmark = JSON.parse(data);
-		var tagInBookList = "";
-		for(i=0; i < jsonBookmark.length ; i++){
-			stations.push(new station(jsonBookmark[i].sId,jsonBookmark[i].sName,jsonBookmark[i].latitude,jsonBookmark[i].longitude,i));
-			tagInBookList += "<tr id='bookmark"+i+"' onclick='selectBookmark(this.id)'><td>"+jsonBookmark[i].sName+"</td><td>"+jsonBookmark[i].addr+"</td><td>"+jsonBookmark[i].type+"</td><tr>";
-		}
-		document.getElementById("bookList").innerHTML = tagInBookList;
-		
-		/* map 출력, marker 출력 */
-		function initMap() {
-			var map = new google.maps.Map(document.getElementById('map'), {
-				zoom : 7,
-				center : {
-					lat : 36.5,
-					lng : 127.5
-				}
-			});
-			setMarkers(map);
-		}
-		
-		/* marker 생성 */
-		function setMarkers(map) {
-			for (var i = 0; i < stations.length; i++) {
-				var temp = stations[i];
-				console.log(temp.getLatitude());
-				console.log(temp.getLongitude());
-				var marker = new google.maps.Marker({
-					position : {
-						lat : Number(temp.getLatitude()),
-						lng : Number(temp.getLongitude())
-					},
-					map : map,
-					title : temp.getSName(),
-					zIndex: temp.getIndex() 
-				});
+		function deleteBookmark(sId) {
+			var check = confirm("삭제 하시겠습니까?");
+			if (check) {
+				sendRequest("DeleteBookmark", "sId=" + sId, updateBookmark, "POST");
+			} else {
+				return;
 			}
 		}
-		
-		
-		function selectBookmark(sId){
-			alert(sId);
+	
+		function updateBookmark() {
+			if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+				var data = httpRequest.responseText.trim();
+				var jsonData = JSON.parse(data);
+				var tagInTable = "";
+	
+				for (i = 0; i < jsonData.length; i++) {
+					tagInTable += '<tr>'
+						+ '<td>' + jsonData[i].sName + '</td>'
+						+ '<td>' + jsonData[i].addr + '</td>'
+						+ '<td>' + jsonData[i].type + '</td>'
+						+ '<td><button id="' + jsonData[i].sId + '" onclick="deleteBookmark(this.id)">삭제</button></td>'
+						+ '<td><button onclick="viewMap(\'' + jsonData[i].sName + '\',\'' + jsonData[i].latitude + '\',\'' + jsonData[i].longitude + '\')">지도 보기</button></td>'
+						+ '</tr>';
+				}
+				document.getElementById("bookTable").innerHTML = tagInTable;
+			}
 		}
-		
-		
-		
-		
-		
-		
+	
+		function viewMap(sName, latitude, longitude) {
+			document.getElementById('id01').style.display = 'block';
+			document.getElementById('mapTitle').innerHTML = '<h2>' + sName + '</h2>';
+			myMap(latitude, longitude);
+		}
+	
+		function myMap(latitude, longitude) {
+			var myLatlng = new google.maps.LatLng(latitude, longitude);
+			var mapProp = {
+				center : myLatlng,
+				zoom : 18,
+			};
+			var map = new google.maps.Map(document.getElementById('mapContent'), mapProp);
+			var marker = new google.maps.Marker({
+				position : myLatlng
+			});
+			marker.setMap(map);
+		}
 	</script>
-
-	<!-- 구글 지도 -->
-	<script	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjvtC_0Hr83DsKOtKr0oamgTdwyBtcuho&callback=initMap">
-	</script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjvtC_0Hr83DsKOtKr0oamgTdwyBtcuho&callback=myMap"></script>
 </body>
 </html>
