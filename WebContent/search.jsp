@@ -214,7 +214,10 @@
 					var tagInOption = "";
 					
 					for(i=0 ; i<data.length ; i++){
-						tagInOption += '<tr><td onclick="reqStation('+i+')">'+data[i].sName+'</td></tr>';
+						tagInOption += '<tr onclick="reqStation('+i+')">'
+										+'<td>'+data[i].sName+'</td>'
+										+'<td>'+data[i].addr+'</td>'
+										+'</tr>';
 					}
 					
 					document.getElementById("wordsOption").innerHTML = tagInOption;

@@ -39,7 +39,7 @@
 	<!-- Navigation -->
 	<jsp:include page="nav.jsp" />
 
-
+	<!-- 메인 이미지 -->
 	<header class="masthead">
 		<div class="header-content">
 			<div class="header-content-inner">
@@ -51,11 +51,12 @@
 			</div>
 		</div>
 	</header>
-
+	
+	<!-- 이미지 3장 섹션 부분 -->
 	<section class="p-0">
 		<div class="container-fluid">
 			<div class="row no-gutter popup-gallery">
-
+				<!-- 첫번째 이미지 -->
 				<div class="col-lg-4 col-sm-6">
 					<a class="portfolio-box" href="img/main_2.jpg">
 						<img class="img-fluid" src="img/main_2.jpg" alt="">
@@ -67,7 +68,7 @@
 						</div>
 					</a>
 				</div>
-
+				<!-- 두번째 이미지 -->
 				<div class="col-lg-4 col-sm-6">
 					<a class="portfolio-box" href="img/main_3.jpg"> 
 					<img class="img-fluid" src="img/main_3.jpg" alt="">
@@ -79,7 +80,7 @@
 						</div>
 					</a>
 				</div>
-
+				<!-- 세번째 이미지 -->
 				<div class="col-lg-4 col-sm-6">
 					<a class="portfolio-box" href="img/main_4.jpg"> <img
 						class="img-fluid" src="img/main_4.jpg" alt="">
@@ -95,7 +96,8 @@
 			</div>
 		</div>
 	</section>
-
+	
+	<!-- 하단 contact 부분 -->
 	<section id="contact">
 		<div class="container">
 			<div class="row">
@@ -118,8 +120,8 @@
 				</div>
 				<div class="col-lg-4 mr-auto text-center">
 					<i class="fa fa-envelope-o fa-3x sr-contact"></i>
-					<p><a href="mailto:your-email@your-domain.com">tigerho2@gmail.com</a></p>
-					<p><a href="mailto:your-email@your-domain.com">leeyj8270@gmail.com</a></p>
+					<p><a href="#">tigerho2@gmail.com</a></p>
+					<p><a href="#">leeyj8270@gmail.com</a></p>
 				</div>
 			</div>
 		</div>
